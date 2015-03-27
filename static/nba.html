@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" id="chaoBaiDa" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no" />
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .item1,.item2,.item3,.item4,.item5,.item6,.item7,.item8{
+                display: none;
+            }
+            .playInfo{
+                display: none;
+            }
+            .home{
+                display:none;
+            }
+            .tab{
+
+            }
+            .tab a{
+                display: block;
+                line-height: 60px;
+                height: 60px;
+                border-bottom: 1px solid #000;
+                text-align: center;
+                text-decoration: none;
+                color: #000;
+            }
+            .tab li{
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <a class="home" href="#home">home</a>
+        <div class="itemContent" >
+            <div class="content" >
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <ul class="tab">
+                <a href="javascript:;"><li id-attr="1">POINTS PER GAME</li></a>
+                <a href="javascript:;"><li id-attr="2">REBOUNDS PER GAME</li></a>
+                <a href="javascript:;"><li id-attr="3">ASSISTS PER GAME</li></a>
+                <a href="javascript:;"><li id-attr="4">STEALS PER GAME</li></a>
+                <a href="javascript:;"><li id-attr="5">FIELD GOAL %</li></a>
+                <a href="javascript:;"><li id-attr="6">FREE THROW %</li></a>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript" src="/js/sea.min.js"></script>
+    <script>
+        var seajsConfig = {
+            base: './',
+            alias: {
+                "jquery": "/js/jquery",
+                "jqmobile": "/js/jqmobile",
+                "underscore": "/js/underscore",
+                "backbone": "/js/backbone"
+            },
+            vars: {
+                jsPre: '.min'
+            }
+        }
+        seajs.config(seajsConfig);
+        seajs.use("/js/nba");
+    </script>
+    <script type="text/template" id="item_template">
+        <a href="#play/<%= id%>" class="item<%= playCount%>" style="height:100px;width:100%;float:left;"><img width="40px" style="padding-left:40px;" src="http://stats.nba.com/media/players/132x132/<%= numid%>.png?interpolation=lanczos-none&resize=*:40px"/><span style="font-size:12px;vertical-align:middle;"><%= playername%></span><img width="60px" src="http://stats.nba.com/media/img/teams/logos/<%= cteamname%>_logo.svg"/><span><%= score%></span></a>
+    </script>
+    <script type="text/template" id="play_template">
+        <div class="playInfo"><img width="100px" src="http://stats.nba.com/media/players/700/<%= numid%>.png?interpolation=lanczos-none&resize=*:300px"/><span style="font-size:12px;vertical-align:middle;"><%= playername%></span><img width="60px" src="http://stats.nba.com/media/img/teams/logos/<%= cteamname%>_logo.svg"/><span><span><%= teamname%></span><%= score%></span></div>
+    </script>
+</html>

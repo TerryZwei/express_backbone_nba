@@ -1,0 +1,24 @@
+{
+  "name": "nba",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "~0.9.0",
+    "body-parser": "~1.12.0",
+    "express": "~4.12.2",
+    "express-session": "~1.10.3",
+    "jade": "~1.9.2",
+    "less": "~2.4.0",
+    "mongoose": "~3.8.24",
+    "multer": "~0.1.8",
+    "superagent": "^1.1.0",
+    "underscore": "~1.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "terry&cherry",
+  "license": ""
+}
