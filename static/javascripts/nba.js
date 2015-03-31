@@ -51,7 +51,7 @@ define(function(require){
                 this.addAll();
                 if(this.loadRouter){
                     this.loadRouter = false;
-                    this.router_app = new AppRouter;
+                    this.router_app = new AppRouter();
                     Backbone.history.start({pustState: true});
                 }
             },
@@ -63,7 +63,7 @@ define(function(require){
             },
             renderPlay: function(id){
                 var playid = typeof(id) == 'object'?obj: Collection.get(id);
-                if(playid == undefined){
+                if(playid === undefined){
                     playid = new nbaModel({id: id});
                     var self = this;
                     playid.fetch({success: function(resp){
@@ -87,7 +87,7 @@ define(function(require){
             },
         });
 
-        var AppView = new appView;
+        var AppView = new appView();
 
         var AppRouter = Backbone.Router.extend({
             routes:{
