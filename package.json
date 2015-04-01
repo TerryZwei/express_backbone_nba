@@ -16,7 +16,7 @@
     "less": "~2.4.0",
     "mongoose": "~3.8.24",
     "multer": "~0.1.8",
-    "superagent": "^1.1.0",
+    "superagent": "*",
     "underscore": "~1.8.2"
   },
   "devDependencies": {
