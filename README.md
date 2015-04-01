@@ -1,8 +1,5 @@
 # 实践--Backbonejs
 
-
-[![Build Status][travis-image]][travis-url]
-
 经过一个星期左右对backbonejs的学习和尝试，本着不动手做项目不能掌握的精神，所以用nodejs的express框架+backbonejs搭建了一个nba数据的例子。希望有兴趣的同学可以参与进来。
 
 - **后台使用nodejs的express框架**
