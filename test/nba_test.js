@@ -11,14 +11,14 @@ var getNbaData = function(url,callback){
     });
 }
 
-describe('nba data', function(){
+
+
+describe('#getNbaInfo1()', function(){
     this.timeout(30000);
-    describe('#getNbaInfo1()', function(){
-        it('get nba data info',function(done){
-            getNbaData('http://'+host+testurl,function(err,res){
-                assert.ok(err == null);
-                done();
-            });
+    it('get nba data info',function(done){
+        getNbaData('http://'+host+testurl,function(err,res){
+            assert.ok(err == null);
         });
+        done();
     });
 });
