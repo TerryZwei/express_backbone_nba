@@ -3,6 +3,7 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
+var mocha = require('gulp-mocha');
 
 gulp.task('scripts', function(){
     return gulp.src(['static/javascripts/*.js'])
@@ -21,6 +22,13 @@ gulp.task('less',function(){
            .pipe(less())
            .pipe(minifyCSS())
            .pipe(gulp.dest('build/css'));
+});
+
+gulp.task('mocha', function(){
+    return gulp.src(['test/*_test.js'],{read: false})
+           .pipe(mocha({
+                 reporter: 'spec'
+           }));
 });
 
 gulp.task('default',function(){
