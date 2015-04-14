@@ -10,12 +10,18 @@ cookieParser = require 'cookie-parser'
 path = require 'path'
 littleUtil = require 'little-util'
 littleUtil.requireModules [],true
+log4js = require 'log4js'
+logconfig = require './config/system'
 
+log4js.configure logconfig
+logger = log4js.getLogger 'normal'
+logger.setLevel 'INFO'
 # mongoose.connect 'mongodb://'
 
 app.set 'view engine', 'jade'
 app.set 'views', path.join(__dirname, 'views')
 
+app.use log4js.connectLogger logger,{level: 'auto'}
 app.use bodyParser.json()
 app.use bodyParser.urlencoded({ extended: true })
 app.use multer({dest:'./uploads/'})
