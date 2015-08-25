@@ -13,8 +13,10 @@ littleUtil.requireModules [],true
 log4js = require 'log4js'
 logconfig = require './config/system'
 log4js.configure logconfig
+
 logger = log4js.getLogger 'normal'
 logger.setLevel 'INFO'
+
 app.use log4js.connectLogger logger, {level: 'auto'}
 # mongoose.connect 'mongodb://'
 
