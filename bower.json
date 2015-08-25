@@ -1,0 +1,25 @@
+{
+  "name": "express_backbone_nba",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TerryZwei/express_backbone_nba",
+  "authors": [
+    "Terry <gyweizhiwei@gmail.com>"
+  ],
+  "description": "manager javascripts by bower",
+  "keywords": [
+    "backbone"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.2",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.20"
+  }
+}

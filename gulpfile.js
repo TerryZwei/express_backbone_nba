@@ -5,7 +5,12 @@ var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var mocha = require('gulp-mocha');
 
-gulp.task('scripts', function(){
+//copy the file to static dir
+gulp.task('movejs', function(){
+  return gulp.src(['bower_components/backbone/backbone-min.js','bower_components/jquery/dist/jquery.min.js','bower_components/requirejs/require.js','bower_components/underscore/underscore-min.js'])
+            .pipe(gulp.dest('static/javascripts/libs/'));
+});
+/*gulp.task('scripts', function(){
     return gulp.src(['static/javascripts/*.js'])
            .pipe(uglify())
            .pipe(gulp.dest('build/js'));
@@ -29,9 +34,9 @@ gulp.task('mocha', function(){
            .pipe(mocha({
                  reporter: 'spec'
            }));
-});
+});*/
 
-gulp.task('default',function(){
+/*gulp.task('default',function(){
     gulp.watch('static/javascripts/*.js',['scripts','jshint']);
     gulp.watch('static/stylesheets/**',['less']);
-});
+});*/
