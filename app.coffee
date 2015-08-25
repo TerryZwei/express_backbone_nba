@@ -12,7 +12,7 @@ littleUtil = require 'little-util'
 littleUtil.requireModules [],true
 log4js = require 'log4js'
 logconfig = require './config/system'
-log4js.configure 
+log4js.configure logconfig
 
 logger = log4js.getLogger 'normal'
 logger.setLevel 'INFO'
